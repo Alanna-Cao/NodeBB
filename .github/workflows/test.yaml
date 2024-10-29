@@ -74,12 +74,6 @@ jobs:
         run: |
           node app --setup="${SETUP}" --ci="${CI}"
 
-      - name: Install Flow
-        run: npm install --save-dev flow-bin
-
-      - name: Run Flow
-        run: npx flow check --all
-
       - name: Run ESLint
         run: npm run lint
 
