@@ -1,4 +1,4 @@
-name: Lint and test
+name: Flow Tests
 
 on:
   pull_request:
