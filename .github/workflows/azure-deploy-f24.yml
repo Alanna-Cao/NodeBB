@@ -39,6 +39,10 @@ jobs:
       - name: npm install
         run: |
           npm install
+
+      - name: npm install lodash
+        run: |
+          npm install lodash
           
       - name: Set up NodeBB
         run: |
