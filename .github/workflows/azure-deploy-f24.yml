@@ -35,6 +35,10 @@ jobs:
       - name: Install frontend repo
         run: |
           npm install https://github.com/CMU-313/nodebb-frontend-f24-team-sweepers.git
+
+      - name: npm install
+        run: |
+          npm install
           
       - name: Set up NodeBB
         run: |
