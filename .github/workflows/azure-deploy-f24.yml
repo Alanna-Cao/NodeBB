@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - f24
+      - llm-integration
   workflow_dispatch:
     
 concurrency:
