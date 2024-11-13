@@ -26,12 +26,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository and initialize submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: 'true'
 
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: '20.17.0'
+
+      - name: Initialize and update submodules
+        run: |
+          git submodule update --init --recursive
+
+      - name: Install NodeBB dependencies
+        run: |
+          npm install
 
       - name: Set up NodeBB
         run: |
@@ -48,6 +59,9 @@ jobs:
       # - name: Install frontend repo
       #   run: |
       #     npm i https://github.com/sschauk/nodebb-theme-quickstart.git
+      - name: Enable custom theme
+        run: |
+          ./nodebb theme enable nodebb-theme-quickstart
 
       - name: Build 
         run: |
