@@ -664,6 +664,7 @@ describe('API', async () => {
 			if (additionalProperties) { // All bets are off
 				return;
 			}
+			// CHAT GPT generated code
 			const ignoredProperties = ['isEnglish', 'translatedContent'];
 			function validateSchema(schema, data) {
 				Object.keys(data).forEach((key) => {
